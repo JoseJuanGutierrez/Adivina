@@ -1,0 +1,30 @@
+import Foundation
+
+func readNum(txt: String, _ start: Int=1, _ end:Int=1000)->Int{
+    let mn = start<end ? start : end
+    let mx = start<end ? end : start
+    var num: Int!
+    var cont =12
+    let x=Int(arc4random_uniform(UInt32(mx-mn)))+1
+    repeat{
+        print("\(txt)\(mn)-\(mx)?")
+        let nombre: String! = readLine()
+        num=Int(nombre)
+        if(num==x){
+            print("Ganaste")
+        }
+        else
+        {
+            if(num<x){
+                print("Mas grande")
+            }else{
+                if(num>x)
+                {
+                    print("Mas chico")
+                }
+            }
+        }
+    }while (num != x)
+    //}while num==nil || !(mn...mx~=num)
+    return num
+}
